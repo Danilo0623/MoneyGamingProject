@@ -1,0 +1,136 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 46189000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "click on Join Now button and land on registration page",
+            "match": {
+              "location": "com.moneygaming.stepDefinitions.RegistrationStepDefinition.click_on_Join_Now_button_and_land_on_registration_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-17T07:32:07.529Z",
+        "before": [
+          {
+            "result": {
+              "duration": 81482000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.moneygaming.stepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "The message \"This field is required\" appears under the date of birth box",
+        "description": "",
+        "id": "registration;the-message-\"this-field-is-required\"-appears-under-the-date-of-birth-box",
+        "after": [
+          {
+            "result": {
+              "duration": 6155000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.moneygaming.stepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "select the title \"Mr\", enter first \"Danilo\" and surname name \"Nikolic\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Mr\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"Danilo\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"Nikolic\"",
+                  "offset": 61
+                }
+              ],
+              "location": "com.moneygaming.stepDefinitions.RegistrationStepDefinition.select_the_title_enter_first_and_surname_name(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "accept the Terms and Conditions and submit the form",
+            "match": {
+              "location": "com.moneygaming.stepDefinitions.RegistrationStepDefinition.accept_the_Terms_and_Conditions_and_submit_the_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "verify the message \"This field is required\" appears under the date of birth box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"This field is required\"",
+                  "offset": 19
+                }
+              ],
+              "location": "com.moneygaming.stepDefinitions.RegistrationStepDefinition.verify_the_message_appears_under_the_date_of_birth_box(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@registration"
+          }
+        ]
+      }
+    ],
+    "name": "Registration",
+    "description": "",
+    "id": "registration",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Registration.feature",
+    "tags": [
+      {
+        "name": "@registration",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
