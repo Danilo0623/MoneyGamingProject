@@ -14,14 +14,14 @@ public class Hooks {
 
     @After
     public void endTest(Scenario scenario) throws InterruptedException {
-//        byte[] screenshot;
-//        if (scenario.isFailed()) {
-//            screenshot = CommonMethods.takeScreenshot("/failed/" + scenario.getName());
-//        } else {
-//            screenshot = CommonMethods.takeScreenshot("/passed/" + scenario.getName());
-//        }
-//
-//        scenario.attach(screenshot,"image/png",scenario.getName());
+        byte[] screenshot;
+        if (scenario.isFailed()) {
+            screenshot = CommonMethods.takeScreenshot("/failed/" + scenario.getName());
+        } else {
+            screenshot = CommonMethods.takeScreenshot("/passed/" + scenario.getName());
+        }
+
+        scenario.attach(screenshot, "image/png", scenario.getName());
 
         BaseClass.tearDown();
     }

@@ -7,15 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends CommonMethods {
 
-    @FindBy(xpath = "//a [contains (@class, 'newUser')]")
+    @FindBy(xpath = "//a[contains(@class, 'newUser')]")
     public WebElement joinNow;
 
 
-
-    public void clickOnJoinNow(){
+    public void clickOnJoinNow() {
         click(joinNow);
     }
-    public HomePage(){
+
+    public HomePage() {
         PageFactory.initElements(driver, this);
     }
 

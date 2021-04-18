@@ -45,7 +45,6 @@ public class BaseClass {
      */
     public static void tearDown() throws InterruptedException {
         if (driver != null) {
-            Thread.sleep(6000);
             driver.quit();
         }
     }

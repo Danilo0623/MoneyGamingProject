@@ -6,17 +6,20 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class CommonMethods extends PageInitializer {
 
     /**
-     * this method will return an object of Explicit wait with time set to 20 sec
+     * This method return an object of Explicit wait with time set to 20 sec
      *
      * @return WebDriverWait
      */
@@ -27,7 +30,7 @@ public class CommonMethods extends PageInitializer {
     }
 
     /**
-     * this method will wait until given element becomes clickable
+     * This method will wait until given element becomes clickable
      *
      * @param element
      */
@@ -37,7 +40,16 @@ public class CommonMethods extends PageInitializer {
     }
 
     /**
-     * this method will wait till and then click
+     * This method will wait until given element becomes visible
+     *
+     * @param element
+     */
+    public static void waitForVisibility(WebElement element) {
+        getWait().until(ExpectedConditions.visibilityOf(element));
+    }
+
+    /**
+     * This method will wait until given element becomes clickable and then click
      *
      * @param element
      */
@@ -47,7 +59,7 @@ public class CommonMethods extends PageInitializer {
     }
 
     /**
-     * this method will clear a textBox and send text to it
+     * This method will clear a textBox and send text to it
      *
      * @param element
      * @param textToSend
@@ -58,6 +70,41 @@ public class CommonMethods extends PageInitializer {
     }
 
     /**
+     * This method will get text and return it
+     *
+     * @param element
+     * @return
+     */
+    public static String getTextMethod(WebElement element) {
+        String text = element.getText();
+        return text;
+    }
+
+
+    /**
+     * This method will select value from given drop down by the given visible text
+     *
+     * @param dropDown
+     * @param visibleText
+     */
+    public static void selectDDValue(WebElement dropDown, String visibleText) {
+        try {
+            Select select = new Select(dropDown);
+            List<WebElement> options = select.getOptions();
+            for (WebElement option : options) {
+                if (option.getText().trim().equals(visibleText)) {
+                    select.selectByVisibleText(visibleText);
+                    break;
+                }
+            }
+        } catch (UnexpectedTagNameException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * This method will TakeScreenShot
+     *
      * @param fileName
      * @return
      */
@@ -74,6 +121,8 @@ public class CommonMethods extends PageInitializer {
     }
 
     /**
+     * This method will get Time Stamp
+     *
      * @param pattern
      * @return
      */

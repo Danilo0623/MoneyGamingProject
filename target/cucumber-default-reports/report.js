@@ -34,6 +34,9 @@ formatter.scenario({
   "tags": [
     {
       "name": "@registration"
+    },
+    {
+      "name": "@dobErrorMessage"
     }
   ]
 });
@@ -67,6 +70,7 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.embedding("image/png", "embedded0.png", "The message \"This field is required\" appears under the date of birth box");
 formatter.after({
   "status": "passed"
 });
